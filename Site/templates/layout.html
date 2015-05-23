@@ -2,9 +2,35 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Site</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/Site.css">
+    {% block styles %}
+    {% endblock %}
 </head>
 <body>
+    <header>
+        <div class="">
+             <nav class="top-nav-bar">
 
+                <ul>
+                    <li><a class="main-nav btn" href="/">Home</a></li>
+                    <li><a class="main-nav btn" href="/about">About</a></li>
+                    <li><a class="main-nav btn" href="/work">Work</a></li>
+                    <li><a class="main-nav btn"  href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+    <script src="{{ STATIC_URL }}/static/js/jquery.js"></script>
+    <script src="{{ STATIC_URL }}/static/js/bootstrap.js"></script>
+    <script src="{{ STATIC_URL }}/static/js/Site.js"></script>
+    {% block scripts %}
+    {% endblock %}
 </body>
 </html>
